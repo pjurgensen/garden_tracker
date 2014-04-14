@@ -1,0 +1,6 @@
+.garden-task-container{
+	@include grid-row();
+	h1, p{
+		@include grid-column(12);
+	}
+}
