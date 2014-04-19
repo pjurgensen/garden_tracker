@@ -1,31 +1,25 @@
 <div id="future-mask"></div>
 
 <div class="header-offset">
-	<% i = 0 %>
-	<% num = 15 %>
-	<% while i < num do %>
+
+	<% @future_tasks.each do | task | %>
 		<div class="garden-task-row future">
-			<div class="date">5/5/14</div>
-			<div class="description">Planted lettuce seedlings</div>
-			<div class="followup">5/15/14 Transplant to pots.</div>
+			<p class="date"><%= task.date %></p>
+			<p class="description"><%= task.description %></p>
 		</div>
-		<% i += 1 %>
 	<% end %>
 
-	<div class="garden-task-row today">
-		<p class="date"><strong>Today</strong></p>
-		<p class="description">Planted lettuce seedlings</p>
-		<p class="followup">5/15/14 Transplant to pots.</p>
-	</div>
-
-	<% i = 0 %>
-	<% num = 25 %>
-	<% while i < num do %>
-		<div class="garden-task-row past">
-			<div class="date">4/1/14</div>
-			<div class="description">Planted lettuce seedlings</div>
-			<div class="followup">5/15/14 Transplant to pots.</div>
+	<% @today_tasks.each do | task | %>
+		<div class="garden-task-row today">
+			<p class="date"><strong>Today</strong></p>
+			<p class="description"><%= task.description %></p>
 		</div>
-		<% i += 1 %>
+	<% end %>
+
+	<% @past_tasks.each do | task | %>
+		<div class="garden-task-row past">
+			<p class="date"><%= task.date %></p>
+			<p class="description"><%= task.description %></p>
+		</div>
 	<% end %>
 </div>

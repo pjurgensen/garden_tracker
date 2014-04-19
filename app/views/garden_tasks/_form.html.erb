@@ -8,8 +8,17 @@
       <%= f.label :description %></br>
       <%= f.text_field :description %>
     </div>
-    <div class="submit-button form-group">
-      <%= f.submit(:class => "button") %>
+    <div class="days_away form-group">
+      <%= f.label :number_of_days_from_now %></br>
+      <input name="days_away"
+    </div>
+    <div class="future-description form-group">
+      <%= f.label :description %></br>
+      <input name="future_description">
+    </div>
+    <div class="buttons form-group">
+      <%= link_to "add followup task", new_garden_task_path, class: "followup-button button small" %><br />
+      <%= f.submit(:class => "submit-button button") %>
     </div>
   <% end %>
 </div>

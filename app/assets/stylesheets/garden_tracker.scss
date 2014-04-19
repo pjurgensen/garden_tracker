@@ -82,13 +82,16 @@ body {
 	}
 	.task-form-row {
 		@include grid-row();
-		.date, .submit-button {
+		.date, .buttons {
 			@include grid-column(4)
 		}
 		.description {
 			@include grid-column(8)
 		}
-		.button {
+		.followup-button {
+			background-color: $secondaryHighlightColor;
+		}
+		.submit-button {
 			background-color: $primaryHighlightColor;
 		}
 	}
