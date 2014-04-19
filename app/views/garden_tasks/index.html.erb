@@ -1,9 +1,35 @@
-<div class="garden-task-container">
-	<h1>Garden Tracker</h1>
+<div class="header">
+	<div class="header-contents">
+		<h1>Garden Tracker</h1>
+		<%= link_to "Add task", new_garden_task_path %>
+	</div>
+</div>
+<div class="task-rows">
+	<% i = 0 %>
+	<% num = 10 %>
+	<% while i < num do %>
+		<div class="garden-task-row future">
+			<div class="date">5/5/14</div>
+			<div class="description">Planted lettuce seedlings</div>
+			<div class="followup">5/15/14 Transplant to pots.</div>
+		</div>
+		<% i += 1 %>
+	<% end %>
 
-	<% @garden_tasks.each do | task | %>
-    	<li><%= task.description %></li><br />
-  	<% end %>
+	<div class="garden-task-row today">
+		<p class="date"><strong>Today</strong></p>
+		<p class="description">Planted lettuce seedlings</p>
+		<p class="followup">5/15/14 Transplant to pots.</p>
+	</div>
 
-	<p><%= link_to "Add task", new_garden_task_path %></p>
+	<% i = 0 %>
+	<% num = 10 %>
+	<% while i < num do %>
+		<div class="garden-task-row past">
+			<div class="date">4/1/14</div>
+			<div class="description">Planted lettuce seedlings</div>
+			<div class="followup">5/15/14 Transplant to pots.</div>
+		</div>
+		<% i += 1 %>
+	<% end %>
 </div>
