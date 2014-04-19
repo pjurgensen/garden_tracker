@@ -1,6 +1,38 @@
-.garden-task-container{
+.header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background-color: #09AD16;
+	.header-contents{
+		@include grid-row();
+		h1, p{
+			color: white;
+			@include grid-column(12);
+			padding-left: 0;
+		}
+	}
+}
+
+.task-rows{
+	margin-top: 100px;
+}
+
+.garden-task-row{
 	@include grid-row();
-	h1, p{
-		@include grid-column(12);
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	p{
+		margin-bottom: 1px;
+	}
+	.date, .followup{
+		@include grid-column(3);
+	}
+	.description{
+		@include grid-column(6);
+	}
+	&.today{
+		border: 1px solid red;
 	}
 }

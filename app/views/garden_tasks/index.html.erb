@@ -1,4 +1,34 @@
-<div class="garden-task-container">
-	<h1>Garden Tracker</h1>
-	<p>test content</p>
+<div class="header">
+	<div class="header-contents">
+		<h1>Garden Tracker</h1>
+	</div>
+</div>
+<div class="task-rows">
+	<% i = 0 %>
+	<% num = 10 %>
+	<% while i < num do %>
+		<div class="garden-task-row future">
+			<div class="date">5/5/14</div>
+			<div class="description">Planted lettuce seedlings</div>
+			<div class="followup">5/15/14 Transplant to pots.</div>
+		</div>
+		<% i += 1 %>
+	<% end %>
+
+	<div class="garden-task-row today">
+		<p class="date"><strong>Today</strong></p>
+		<p class="description">Planted lettuce seedlings</p>
+		<p class="followup">5/15/14 Transplant to pots.</p>
+	</div>
+
+	<% i = 0 %>
+	<% num = 10 %>
+	<% while i < num do %>
+		<div class="garden-task-row past">
+			<div class="date">4/1/14</div>
+			<div class="description">Planted lettuce seedlings</div>
+			<div class="followup">5/15/14 Transplant to pots.</div>
+		</div>
+		<% i += 1 %>
+	<% end %>
 </div>
