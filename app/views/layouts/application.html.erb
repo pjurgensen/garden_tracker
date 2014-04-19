@@ -15,5 +15,11 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+
+    <div class="container flash">
+      <span class="green"><%= flash[:notice] %></span>
+      <span class="red"><%= flash[:alert] %></span>
+    </div>
+
   </body>
 </html>

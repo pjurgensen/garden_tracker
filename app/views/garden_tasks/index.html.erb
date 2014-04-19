@@ -1,4 +1,9 @@
 <div class="garden-task-container">
 	<h1>Garden Tracker</h1>
-	<p>test content</p>
+
+	<% @garden_tasks.each do | task | %>
+    	<li><%= task.description %></li><br />
+  	<% end %>
+
+	<p><%= link_to "Add task", new_garden_task_path %></p>
 </div>
