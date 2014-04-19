@@ -4,9 +4,12 @@
 		<%= link_to "Add task", new_garden_task_path %>
 	</div>
 </div>
+
+<div id="future-mask"></div>
+
 <div class="task-rows">
 	<% i = 0 %>
-	<% num = 10 %>
+	<% num = 15 %>
 	<% while i < num do %>
 		<div class="garden-task-row future">
 			<div class="date">5/5/14</div>
@@ -23,7 +26,7 @@
 	</div>
 
 	<% i = 0 %>
-	<% num = 10 %>
+	<% num = 25 %>
 	<% while i < num do %>
 		<div class="garden-task-row past">
 			<div class="date">4/1/14</div>

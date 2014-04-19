@@ -13,10 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.scrollTo.min.js
 //= require turbolinks
 //= require_tree .
 
 $(function(){ 
 	$(document).foundation(); 
-	console.log('sup');
+	$.scrollTo('.today', {
+		offset: -220
+	});
 });
