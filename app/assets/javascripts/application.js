@@ -14,12 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.scrollTo.min.js
+//= require garden_tracker.js
 //= require turbolinks
 //= require_tree .
 
-$(function(){ 
-	$(document).foundation(); 
-	$.scrollTo('.today', {
-		offset: -220
-	});
-});
+$(function(){$(document).foundation();});
