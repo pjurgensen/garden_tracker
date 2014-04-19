@@ -4,14 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "GardenTracker" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
 
   <body>
+    <div class="header">
+      <div class="header-contents">
+        <h1><%= link_to "Garden Tracker", garden_tasks_path %></h1>
+        <%= link_to "Add task", new_garden_task_path %>
+      </div>
+    </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

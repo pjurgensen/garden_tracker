@@ -1,40 +1,62 @@
-.header{
+$primaryColor: rgba(75,93,41,1);
+$secondaryColor: rgba(154,169,63,1);
+$secondaryHighlightColor: rgba(239,208,94,1);
+$primaryHighlightColor: rgba(240,142,54,1);
+$backgroundColor: rgba(249,238,192,1);
+
+/*================================================= HEADER =================================================*/
+
+.header {
 	position: fixed;
 	width: 100%;
 	top: 0;
-	background-color: #09AD16;
-	.header-contents{
+	background-color: $primaryColor;
+	.header-contents {
 		@include grid-row();
-		h1, a{
+		h1, a {
 			color: white;
 			@include grid-column(6);
 			padding-left: 0;
+			-o-transition:.5s;
+		  -ms-transition:.5s;
+		  -moz-transition:.5s;
+		  -webkit-transition:.5s;
+		  transition:.5s;
+		}
+		h1, a:hover {
+			color: $secondaryColor;
 		}
 	}
 }
 
-#future-mask{
+/*=================================================== BODY ===================================================*/
+
+body {
+	background-color: $backgroundColor;
+}
+
+.header-offset {
+	margin-top: 100px;
+}
+
+#future-mask {
 	position: fixed;
 	width: 100%;
 	height: 120px;
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjM3JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 37%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(37%,rgba(255,255,255,1)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(0,0,0,0) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 37%,rgba(0,0,0,0) 100%); /* W3C */
+	background: -moz-linear-gradient(top,  $backgroundColor 0%, $backgroundColor 37%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$backgroundColor), color-stop(37%,$backgroundColor), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $backgroundColor 0%,$backgroundColor 37%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $backgroundColor 0%,$backgroundColor 37%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $backgroundColor 0%,$backgroundColor 37%,rgba(0,0,0,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  $backgroundColor 0%,$backgroundColor 37%,rgba(0,0,0,0) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00000000',GradientType=0 ); /* IE6-8 */
 
 	top: 72px;
 }
 
-.task-rows{
-	margin-top: 100px;
-}
-
-.garden-task-row{
+.garden-task-row {
 	@include grid-row();
 	border: 1px solid #ddd;
 	padding: 10px;
@@ -43,13 +65,35 @@
 	p{
 		margin-bottom: 1px;
 	}
-	.date, .followup{
+	.date, .followup {
 		@include grid-column(3);
 	}
-	.description{
+	.description {
 		@include grid-column(6);
 	}
-	&.today{
-		border: 1px solid red;
+	&.today {
+		border: 1px solid $primaryHighlightColor;
 	}
 }
+
+.new-garden-task {
+	h2 {
+		color: #9AA93F;
+	}
+	.task-form-row {
+		@include grid-row();
+		.date, .submit-button {
+			@include grid-column(4)
+		}
+		.description {
+			@include grid-column(8)
+		}
+		.button {
+			background-color: $primaryHighlightColor;
+		}
+	}
+}
+
+
+/*================================================= FOOTER =================================================*/
+

@@ -13,7 +13,7 @@ class GardenTasksController < ApplicationController
 			flash[:notice] = "Your task was created"
 			redirect_to garden_tasks_path
 		else
-			flash[:alert] = "Your task was not save - try again"
+			flash[:alert] = "Your task was not saved - try again"
 			render 'new'
 		end
 	end
