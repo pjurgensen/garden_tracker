@@ -1,10 +1,9 @@
 <div id="future-mask"></div>
 
 <div class="header-offset">
-
 	<% @future_tasks.each do | task | %>
 		<div class="garden-task-row future">
-			<p class="date"><%= task.date %></p>
+			<p class="date"><%= task.date.strftime("%B %e, %Y") %></p>
 			<p class="description"><%= task.description %></p>
 		</div>
 	<% end %>
@@ -18,7 +17,7 @@
 
 	<% @past_tasks.each do | task | %>
 		<div class="garden-task-row past">
-			<p class="date"><%= task.date %></p>
+			<p class="date"><%= task.date.strftime("%B %e, %Y") %></p>
 			<p class="description"><%= task.description %></p>
 		</div>
 	<% end %>

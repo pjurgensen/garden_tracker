@@ -82,17 +82,26 @@ body {
 	}
 	.task-form-row {
 		@include grid-row();
-		.date, .buttons {
-			@include grid-column(4)
+		.date, .days-away, .buttons {
+			@include grid-column(4);
+
 		}
-		.description {
-			@include grid-column(8)
+		.description, .future-description {
+			@include grid-column(8);
+
 		}
 		.followup-button {
 			background-color: $secondaryHighlightColor;
 		}
 		.submit-button {
 			background-color: $primaryHighlightColor;
+		}
+		.resized-textbox {
+			width: 100%;
+			height: 2.3125rem;
+			font-size: 0.875rem;
+			margin: 0 0 1rem 0;
+			padding: 0.5rem;
 		}
 	}
 }
