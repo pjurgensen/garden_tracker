@@ -12,6 +12,12 @@ $(function(){
 			$('#future-mask').fadeIn();
 		}
 	});
+
+	$( ".task-form-row #followup-button" ).click(function() {
+	  $(this).hide();
+    $('.task-form-row .hidden-fields').show();
+    return false;
+	});
 });
 
 

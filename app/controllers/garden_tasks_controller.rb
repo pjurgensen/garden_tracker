@@ -13,12 +13,12 @@ class GardenTasksController < ApplicationController
 	def create
 		@garden_task = GardenTask.create(garden_task_params)
 
-		if params[:days_away] && params[:future_description] != nil
+		if params[:days_away] && params[:future_description] != (nil || "")
 			days_away = params[:days_away]
 			future_date = GardenTask.new_date(params[:garden_task][:date], days_away)
 			puts "Future date: " + future_date
 			@future_task = GardenTask.create(date: future_date, description: params[:future_description])
-			future_task_okay = true
+			future_task_okay = @future_task.save
 		else
 			future_task_okay = true
 		end
