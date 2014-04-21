@@ -13,7 +13,7 @@ $backgroundColor: rgba(249,238,192,1);
 	background-color: $primaryColor;
 	.header-contents {
 		@include grid-row();
-		h1, a {
+		a {
 			color: white;
 			@include grid-column(6);
 			padding-left: 0;
@@ -23,10 +23,14 @@ $backgroundColor: rgba(249,238,192,1);
 		  -webkit-transition:.5s;
 		  transition:.5s;
 		}
-		h1, a:hover {
+		a:hover {
 			color: $secondaryColor;
 		}
 	}
+}
+
+.add-task-link {
+	margin-left: 700px;
 }
 
 /*=================================================== BODY ===================================================*/
