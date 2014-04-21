@@ -1168,16 +1168,16 @@ $header-font-family: 'Alike', serif;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: rgba(75,93,41,1);
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 80px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-weight: normal;
+$topbar-title-font-size: rem-calc(30);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;

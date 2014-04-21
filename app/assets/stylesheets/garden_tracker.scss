@@ -6,12 +6,38 @@ $backgroundColor: rgba(249,238,192,1);
 
 /*================================================= HEADER =================================================*/
 
-.header {
+.top-bar {
+	.title-area {
+		a {
+			-o-transition:.5s;
+		  -ms-transition:.5s;
+		  -moz-transition:.5s;
+		  -webkit-transition:.5s;
+		  transition:.5s;
+		}
+		a:hover {
+			color: $secondaryColor;
+		}
+	}
+	.top-bar-section {
+		.active {
+			background-color: $primaryColor;
+			padding: 20px 20px 0px 0px;
+			.add-task {
+				background-color: $primaryHighlightColor;
+				color: $primaryColor;
+			}
+		}
+	}
+}
+
+/*
+.top-bar {
 	position: fixed;
 	width: 100%;
 	top: 0;
 	background-color: $primaryColor;
-	.header-contents {
+	.title-area, .top-bar-section {
 		@include grid-row();
 		a {
 			color: white;
@@ -28,10 +54,7 @@ $backgroundColor: rgba(249,238,192,1);
 		}
 	}
 }
-
-.add-task-link {
-	margin-left: 700px;
-}
+*/
 
 /*=================================================== BODY ===================================================*/
 
@@ -40,7 +63,7 @@ body {
 }
 
 .header-offset {
-	margin-top: 100px;
+	margin-top: 60px;
 }
 
 #future-mask {
@@ -82,7 +105,8 @@ body {
 
 .new-garden-task {
 	h2 {
-		color: #9AA93F;
+		color: $secondaryColor;
+		margin-bottom: 25px;
 	}
 	.task-form-row {
 		@include grid-row();
@@ -96,9 +120,11 @@ body {
 		}
 		.followup-button {
 			background-color: $secondaryHighlightColor;
+			color: $primaryColor;
 		}
 		.submit-button {
 			background-color: $primaryHighlightColor;
+			color: $primaryColor;
 		}
 		.resized-textbox {
 			width: 100%;
