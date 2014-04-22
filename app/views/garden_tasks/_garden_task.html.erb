@@ -1,0 +1,7 @@
+<% object.each do | task | %>
+	<div class="garden-task-row <% if task.date == Date.today %> today <% end %>">
+		<p class="date"><% if task.date == Date.today %><strong>Today</strong><% else %><%= task.date.strftime("%B %e, %Y") %><% end %></p>
+		<p class="description"><%= task.description %></p>
+		<p><%= link_to "Edit", edit_garden_task_path(task),  class: "edit-button" %></p>
+	</div>
+<% end %>

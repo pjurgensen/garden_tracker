@@ -32,6 +32,32 @@ class GardenTasksController < ApplicationController
 		end
 	end
 
+	def edit
+		@garden_task = GardenTask.find(params[:id])
+	end
+
+	def update
+		@garden_task = GardenTask.find(params[:id])
+
+		if params[:days_away] && params[:future_description] != (nil || "")
+			days_away = params[:days_away]
+			future_date = GardenTask.new_date(params[:garden_task][:date], days_away)
+			puts "Future date: " + future_date
+			@future_task = GardenTask.create(date: future_date, description: params[:future_description])
+			future_task_okay = @future_task.save
+		else
+			future_task_okay = true
+		end
+
+		if @garden_task.update && future_task_okay
+			flash[:notice] = "Your task was updated"
+			redirect_to garden_tasks_path
+		else
+			flash[:alert] = "Your task was not saved - try again"
+			render 'edit'
+		end
+	end
+
 private
 
   def garden_task_params

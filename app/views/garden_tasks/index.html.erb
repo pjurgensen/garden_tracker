@@ -1,24 +1,11 @@
 <div id="future-mask"></div>
 
-<div class="header-offset">
-	<% @future_tasks.each do | task | %>
-		<div class="garden-task-row future">
-			<p class="date"><%= task.date.strftime("%B %e, %Y") %></p>
-			<p class="description"><%= task.description %></p>
-		</div>
-	<% end %>
+<div class="index-header-offset">
 
-	<% @today_tasks.each do | task | %>
-		<div class="garden-task-row today">
-			<p class="date"><strong>Today</strong></p>
-			<p class="description"><%= task.description %></p>
-		</div>
-	<% end %>
+	<%= render('garden_task', object: @future_tasks) %>
 
-	<% @past_tasks.each do | task | %>
-		<div class="garden-task-row past">
-			<p class="date"><%= task.date.strftime("%B %e, %Y") %></p>
-			<p class="description"><%= task.description %></p>
-		</div>
-	<% end %>
+	<%= render('garden_task', object: @today_tasks) %>
+
+	<%= render('garden_task', object: @past_tasks) %>
+
 </div>

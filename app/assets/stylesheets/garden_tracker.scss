@@ -8,6 +8,9 @@ $backgroundColor: rgba(249,238,192,1);
 
 .top-bar {
 	.title-area {
+		h1 {
+			margin-left: 10px;
+		}
 		a {
 			-o-transition:.5s;
 		  -ms-transition:.5s;
@@ -22,7 +25,7 @@ $backgroundColor: rgba(249,238,192,1);
 	.top-bar-section {
 		.active {
 			background-color: $primaryColor;
-			padding: 20px 20px 0px 0px;
+			padding: 20px 30px 0px 0px;
 			.add-task {
 				background-color: $primaryHighlightColor;
 				color: $primaryColor;
@@ -31,39 +34,11 @@ $backgroundColor: rgba(249,238,192,1);
 	}
 }
 
-/*
-.top-bar {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	background-color: $primaryColor;
-	.title-area, .top-bar-section {
-		@include grid-row();
-		a {
-			color: white;
-			@include grid-column(6);
-			padding-left: 0;
-			-o-transition:.5s;
-		  -ms-transition:.5s;
-		  -moz-transition:.5s;
-		  -webkit-transition:.5s;
-		  transition:.5s;
-		}
-		a:hover {
-			color: $secondaryColor;
-		}
-	}
-}
-*/
-
 /*=================================================== BODY ===================================================*/
 
 body {
 	background-color: $backgroundColor;
-}
-
-.header-offset {
-	margin-top: 60px;
+	padding-top: 100px !important;
 }
 
 #future-mask {
@@ -92,25 +67,33 @@ body {
 	p{
 		margin-bottom: 1px;
 	}
-	.date, .followup {
+	.date {
 		@include grid-column(3);
 	}
 	.description {
 		@include grid-column(6);
+	}
+	.edit-button {
+		@include grid-column(3);
+		color: $primaryHighlightColor;
+	}
+	.edit-button:hover {
+		color: $secondaryHighlightColor;
 	}
 	&.today {
 		border: 1px solid $primaryHighlightColor;
 	}
 }
 
-.new-garden-task {
+.new-garden-task, .edit-garden-task {
 	h2 {
 		color: $secondaryColor;
 		margin-bottom: 25px;
+		margin-left: 15px;
 	}
 	.task-form-row {
 		@include grid-row();
-		.date, .days-away, .buttons {
+		.date, .days-away, .buttons, h2 {
 			@include grid-column(4);
 
 		}

@@ -1,0 +1,12 @@
+<%= content_for(:title, "Edit Garden Task") %>
+
+<div class="header-offset edit-garden-task container">
+  <div class="row">
+    <h2>Edit Garden Task</h2>
+
+    <%= render("layouts/errors", :object => @garden_task) %>
+
+    <%= render("form", :object => @garden_task) %>
+
+  </div>
+</div>
