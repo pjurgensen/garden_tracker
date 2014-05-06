@@ -2,13 +2,13 @@
 	<div class="garden-task-row <% if task.date == Date.today %> today <% elsif task.date < Date.today %> past <% end %>">
 		<p class="date"><% if task.date == Date.today %><strong>Today</strong><% else %><%= task.date.strftime("%B %e, %Y") %><% end %></p>
 		<p class="description"><%= task.description %></p>
-		<p><%= link_to "Edit", edit_garden_task_path(task),  class: "edit-button button tiny" %></p>
+		<p><%= link_to "edit", edit_garden_task_path(task),  class: "edit-button button tiny" %></p>
 		<div class="completed">
 			<%= form_for task do |f| %>
 			    <%= f.check_box :completed %>
-			    <%= f.submit "Save", class: "completed-button button tiny" %>
+			    <%= f.submit "save", class: "completed-button button tiny" %>
 			<% end %>
 		</div>
-		<div class="completed-message">Completed Task!</div>
+		<div class="completed-message">Completed task!</div>
 	</div>
 <% end %>

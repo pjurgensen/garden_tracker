@@ -30,6 +30,9 @@ $backgroundColor: rgba(249,238,192,1);
 				background-color: $primaryHighlightColor;
 				color: $primaryColor;
 			}
+			.add-task:hover {
+				background-color: $secondaryHighlightColor;
+			}
 		}
 	}
 }
@@ -76,7 +79,7 @@ body {
 	.edit-button {
 		@include grid-column(2);
 		background-color: $primaryHighlightColor;
-		width: 50px;
+		width: 5%;
 	}
 	.edit-button:hover {
 		background-color: $secondaryHighlightColor;
