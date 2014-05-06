@@ -58,6 +58,12 @@ class GardenTasksController < ApplicationController
 		end
 	end
 
+	def destroy
+		@garden_task = GardenTask.find(params[:id])
+		@garden_task.destroy
+		redirect_to root_path, notice: "Garden task has been deleted!"
+	end
+
 private
 
   def garden_task_params

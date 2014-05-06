@@ -63,7 +63,7 @@ body {
 
 .garden-task-row {
 	@include grid-row();
-	border: 1px solid #ddd;
+	border: 1px solid $secondaryColor;
 	padding: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -78,10 +78,19 @@ body {
 	}
 	.edit-button {
 		@include grid-column(2);
-		background-color: $primaryHighlightColor;
+		background-color: $secondaryColor;
 		width: 5%;
 	}
 	.edit-button:hover {
+		background-color: $secondaryHighlightColor;
+	}
+	.delete-button {
+		@include grid-column(2);
+		background-color: $primaryHighlightColor;
+		width: 5%;
+		margin-left: 15px;
+	}
+	.delete-button:hover {
 		background-color: $secondaryHighlightColor;
 	}
 	.completed {
@@ -95,7 +104,7 @@ body {
 		color: $primaryHighlightColor;
 	}
 	&.today {
-		border: 1px solid $primaryHighlightColor;
+		border: 2px solid $primaryHighlightColor;
 	}
 }
 
