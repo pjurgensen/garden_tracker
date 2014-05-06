@@ -18,6 +18,13 @@ $(function(){
     $('.task-form-row .hidden-fields').show();
     return false;
 	});
+
+	$("input[type=checkbox]").change(function() {
+	// $("input:checkbox:checked").val(function() {
+
+		$(this).closest('.garden-task-row').find('.completed-message').toggle();
+		return false;
+	});
 });
 
 

@@ -71,14 +71,25 @@ body {
 		@include grid-column(3);
 	}
 	.description {
-		@include grid-column(6);
+		@include grid-column(4);
 	}
 	.edit-button {
-		@include grid-column(3);
-		color: $primaryHighlightColor;
+		@include grid-column(2);
+		background-color: $primaryHighlightColor;
+		width: 50px;
 	}
 	.edit-button:hover {
-		color: $secondaryHighlightColor;
+		background-color: $secondaryHighlightColor;
+	}
+	.completed {
+		@include grid-column(2);
+		.completed-button {
+			background-color: $secondaryColor;
+		}
+	}
+	.completed-message {
+		display: none;
+		color: $primaryHighlightColor;
 	}
 	&.today {
 		border: 1px solid $primaryHighlightColor;

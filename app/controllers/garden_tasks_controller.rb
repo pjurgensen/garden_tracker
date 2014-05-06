@@ -49,7 +49,7 @@ class GardenTasksController < ApplicationController
 			future_task_okay = true
 		end
 
-		if @garden_task.update && future_task_okay
+		if @garden_task.update(garden_task_params) && future_task_okay
 			flash[:notice] = "Your task was updated"
 			redirect_to garden_tasks_path
 		else
@@ -61,6 +61,6 @@ class GardenTasksController < ApplicationController
 private
 
   def garden_task_params
-    params.require(:garden_task).permit(:date, :description)
+    params.require(:garden_task).permit(:date, :description, :completed)
   end
 end

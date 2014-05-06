@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422012227) do
+ActiveRecord::Schema.define(version: 20140422053752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140422012227) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "completed"
+    t.boolean  "completed",   default: false
   end
 
   create_table "recurring_tasks", force: true do |t|
