@@ -8,9 +8,9 @@
                             :data => {:confirm => "Are you sure?",
                                       :method => "delete"} %></p>
 		<div class="completed">
-			<%= form_for task do |f| %>
+			<%= form_for task, remote: true do |f| %>
 			    <%= f.check_box :completed %>
-			    <%= f.submit "save", class: "completed-button button tiny" %>
+			    <%= f.submit "save" %>
 			<% end %>
 		</div>
 		<div class="completed-message">Completed task!</div>

@@ -7,8 +7,7 @@ $(function(){
 	$(window).scroll(function () {
 		if($(window).scrollTop() <= 5){
 			$('#future-mask').fadeOut();
-		}
-		else{
+		} else {
 			$('#future-mask').fadeIn();
 		}
 	});
@@ -19,11 +18,10 @@ $(function(){
     return false;
 	});
 
-	$("input[type=checkbox]").change(function() {
-	// $("input:checkbox:checked").val(function() {
-
-		$(this).closest('.garden-task-row').find('.completed-message').toggle();
-		return false;
+	$(".edit_garden_task input[type=submit]").remove();
+	$(".edit_garden_task input[type=checkbox]").click(function() {
+		$(this).parent('form').submit();
+		$(this).closest('.garden-task-row').find('.completed-message').toggle(this.checked);
 	});
 });
 

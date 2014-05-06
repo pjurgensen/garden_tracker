@@ -22,10 +22,19 @@ $backgroundColor: rgba(249,238,192,1);
 			color: $secondaryColor;
 		}
 	}
+
 	.top-bar-section {
+		.flash {
+			.notice-color {
+				color: $secondaryHighlightColor;
+			}
+			.alert-color {
+				color: $primaryHighlightColor;
+			}
+		}
 		.active {
 			background-color: $primaryColor;
-			padding: 20px 30px 0px 0px;
+			padding: 15px 40px 0px 0px;
 			.add-task {
 				background-color: $primaryHighlightColor;
 				color: $primaryColor;
@@ -121,11 +130,9 @@ body {
 		@include grid-row();
 		.date, .days-away, .buttons, h2 {
 			@include grid-column(4);
-
 		}
 		.description, .future-description {
 			@include grid-column(8);
-
 		}
 		.followup-button {
 			background-color: $secondaryHighlightColor;
@@ -147,7 +154,6 @@ body {
 		}
 	}
 }
-
 
 /*================================================= FOOTER =================================================*/
 

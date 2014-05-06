@@ -24,7 +24,7 @@ class GardenTasksController < ApplicationController
 		end
 
 		if @garden_task.save && future_task_okay
-			flash[:notice] = "Your task was created"
+			flash[:notice] = "Your task was created!"
 			redirect_to garden_tasks_path
 		else
 			flash[:alert] = "Your task was not saved - try again"

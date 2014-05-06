@@ -24,6 +24,11 @@
         </ul>
 
         <section class="top-bar-section">
+          <!-- Center Nav Section -->
+          <ul class="center flash">
+            <li class="notice-color"><%= flash[:notice] %></li>
+            <li class="alert-color"><%= flash[:alert] %></li>
+          </ul>
           <!-- Right Nav Section -->
           <ul class="right">
             <li class="active"><%= link_to "Add task", new_garden_task_path, class: "add-task button" %></li>
@@ -34,12 +39,6 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
-
-
-    <div class="container flash">
-      <span class="notice-color"><%= flash[:notice] %></span>
-      <span class="alert-color"><%= flash[:alert] %></span>
-    </div>
 
   </body>
 </html>
