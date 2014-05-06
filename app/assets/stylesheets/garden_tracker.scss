@@ -76,6 +76,9 @@ body {
 	.description {
 		@include grid-column(4);
 	}
+	button, .button {
+		position: static;
+	}
 	.edit-button {
 		@include grid-column(2);
 		background-color: $secondaryColor;
