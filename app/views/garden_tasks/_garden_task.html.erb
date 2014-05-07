@@ -2,7 +2,7 @@
 	<div class="garden-task-row <% if task.date == Date.today %> today <% elsif task.date < Date.today %> past <% end %>">
 		<p class="date"><% if task.date == Date.today %><strong>Today</strong><% else %><%= task.date.strftime("%B %e, %Y") %><% end %></p>
 		<p class="description"><%= task.description %></p>
-		<p><%= link_to "edit", edit_garden_task_path(task),  class: "edit-button button tiny" %></p>
+		<p><%= link_to "edit", edit_garden_task_path(task), class: "edit-button button tiny" %></p>
 		<p><%= link_to "delete", garden_task_path(task),
 														class: "delete-button button tiny",
                             :data => {:confirm => "Are you sure?",
@@ -10,7 +10,7 @@
 		<div class="completed">
 			<%= form_for task, remote: true do |f| %>
 			    <%= f.check_box :completed %>
-			    <%= f.submit "save" %>
+			    <%= f.submit "save", class: "hidden-save-button button" %>
 			<% end %>
 		</div>
 		<div class="completed-message">Completed task!</div>

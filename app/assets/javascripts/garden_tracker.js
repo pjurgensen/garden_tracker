@@ -18,7 +18,6 @@ $(function(){
     return false;
 	});
 
-	$(".edit_garden_task input[type=submit]").remove();
 	$(".edit_garden_task input[type=checkbox]").click(function() {
 		$(this).parent('form').submit();
 		$(this).closest('.garden-task-row').find('.completed-message').toggle(this.checked);
