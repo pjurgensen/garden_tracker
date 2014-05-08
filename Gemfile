@@ -13,6 +13,7 @@ gem 'foundation-rails'
 gem 'bcrypt'
 gem 'masonry-rails'
 gem 'textacular', '~> 3.0'
+gem 'devise'
 
 group :development do
   gem 'better_errors'
