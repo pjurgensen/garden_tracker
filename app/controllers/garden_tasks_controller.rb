@@ -4,6 +4,17 @@ class GardenTasksController < ApplicationController
 		@today_tasks = GardenTask.where(date: Date.today)
 		@future_tasks = GardenTask.where(['date > ?', Date.today]).order('date DESC')
 		@past_tasks = GardenTask.where(['date < ?', Date.today]).order('date DESC')
+		@search = params[:query]
+		if @search == nil
+			render 'index'
+		else
+			@search_results = GardenTask.basic_search(@search)
+			render 'search'
+		end
+	end
+
+	def search
+		@search_results = GardenTask.basic_search(@search)
 	end
 
 	def new

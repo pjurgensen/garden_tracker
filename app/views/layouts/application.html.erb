@@ -24,14 +24,22 @@
         </ul>
 
         <section class="top-bar-section">
-          <!-- Center Nav Section -->
+          <!-- Left Nav Section -->
+          <ul class="left active">
+            <form action="/garden_tasks?query" method="get">
+              <input id="search" name="query" type="text" placeholder="search">
+              <button class="tiny search-button">Search</button>
+            </form>
+          </ul>
+
           <ul class="center flash">
             <li class="notice-color"><%= flash[:notice] %></li>
             <li class="alert-color"><%= flash[:alert] %></li>
           </ul>
+
           <!-- Right Nav Section -->
-          <ul class="right">
-            <li class="active"><%= link_to "Add task", new_garden_task_path, class: "add-task button" %></li>
+          <ul class="right active">
+            <li><%= link_to "Add task", new_garden_task_path, class: "add-task button" %></li>
           </ul>
         </section>
       </nav>
