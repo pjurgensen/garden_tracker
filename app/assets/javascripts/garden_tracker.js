@@ -21,6 +21,7 @@ $(function(){
 	$(".edit_garden_task input[type=checkbox]").click(function() {
 		$(this).parent('form').submit();
 		$(this).closest('.garden-task-row').find('.completed-message').toggle(this.checked);
+		$(this).closest('.garden-task-row').find('.description').toggleClass("strike-through");
 	});
 });
 

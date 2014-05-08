@@ -91,6 +91,9 @@ body {
 	.description {
 		@include grid-column(4);
 	}
+	.strike-through {
+		text-decoration: line-through;
+	}
 	button, .button {
 		position: static;
 	}
