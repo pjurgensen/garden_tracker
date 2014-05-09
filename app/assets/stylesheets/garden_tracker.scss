@@ -93,6 +93,10 @@ body {
 	}
 	.strike-through {
 		text-decoration: line-through;
+		color: $primaryHighlightColor;
+	}
+	.black-font {
+		color: black;
 	}
 	button, .button {
 		position: static;
