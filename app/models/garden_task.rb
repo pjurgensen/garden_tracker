@@ -7,4 +7,9 @@ class GardenTask < ActiveRecord::Base
 	  (date + days_away.to_i).to_s
 	end
 
+  # def task_created_email(user)
+  #   MyMailer.task_created(user).deliver
+  #   super
+  # end
+
 end

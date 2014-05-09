@@ -23,11 +23,11 @@ class GardenTasksController < ApplicationController
 
 	def create
 		@garden_task = GardenTask.create(garden_task_params)
+		@user = User.find(params[:id])
 
 		if params[:days_away] && params[:future_description] != (nil || "")
 			days_away = params[:days_away]
 			future_date = GardenTask.new_date(params[:garden_task][:date], days_away)
-			puts "Future date: " + future_date
 			@future_task = GardenTask.create(date: future_date, description: params[:future_description])
 			future_task_okay = @future_task.save
 		else
@@ -35,6 +35,7 @@ class GardenTasksController < ApplicationController
 		end
 
 		if @garden_task.save && future_task_okay
+			# task_created_email(@user)
 			flash[:notice] = "Your task was created!"
 			redirect_to garden_tasks_path
 		else
@@ -53,7 +54,6 @@ class GardenTasksController < ApplicationController
 		if params[:days_away] && params[:future_description] != (nil || "")
 			days_away = params[:days_away]
 			future_date = GardenTask.new_date(params[:garden_task][:date], days_away)
-			puts "Future date: " + future_date
 			@future_task = GardenTask.create(date: future_date, description: params[:future_description])
 			future_task_okay = @future_task.save
 		else
