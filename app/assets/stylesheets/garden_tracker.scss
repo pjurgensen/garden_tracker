@@ -43,10 +43,18 @@ $backgroundColor: rgba(249,238,192,1);
 			}
 			.add-task {
 				background-color: $primaryHighlightColor;
-				color: $primaryColor;
 			}
 			.add-task:hover {
 				background-color: $secondaryHighlightColor;
+			}
+		}
+		.user-status {
+			color: $secondaryHighlightColor;
+			a {
+				color: $secondaryColor;
+			}
+			a:hover {
+				color: $secondaryHighlightColor;
 			}
 		}
 	}
@@ -171,7 +179,7 @@ body {
 	}
 }
 
-.search-results {
+.header-offset {
 	h2 {
 		color: $secondaryColor;
 		margin-bottom: 25px;

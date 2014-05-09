@@ -4,5 +4,5 @@ GardenTracker::Application.routes.draw do
 
   resources :garden_tasks
   resources :users
-  resources :sessions
+
 end
